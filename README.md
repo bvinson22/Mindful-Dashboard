@@ -1,20 +1,15 @@
-# Animated Icon Set
+# Mindful Dashboard
 
 ## Why? 
-* Understand the parts of SVG elements that can be animated
-* CSS Animations are lightweight and easy to implement and improve user experience
-* Learn CSS tranforms, transitions, and keyframes
-* Add existing animation libraries to your project and save time
-* Use SVG icons in your future projects
+I wanted to create a dashboard that was useful for my everyday life. I really enjoy counting down until my next trip, so I thought it would be cool to incorporate this into my dashboard. I also experimented with random pictures which was also fun and I would love to add more pictures from my personal collection in the future. 
 
-## How?
-* Use GSAP aka GreenSock Animation library to apply CSS animations
-* Use JavaScript to reduce quirks of CSS animations
-* Use GSAP dev tools
+
 
 ## Citations
 * Icons from [Lucide](https://lucide.dev/)
-* Use [GreenSock](https://greensock.com/) animation library
 * [Normalize CSS](https://necolas.github.io/normalize.css/)
+* Claude Ai [https://claude.ai/new]
+* Chat GPT [https://chatgpt.com/]
+* CodePen [https://codepen.io]
 
 
