@@ -1,35 +1,245 @@
-/* Diagnostic Styling */
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+/* styles.css */
 * {
-  outline: 2px dotted gray;
-} 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* temp background color */
 body {
-    background: lightgray;
-}
-  
-/* vertical and horizontal centering */
-body {
-  display: grid;
-  place-content: center;
-  height: 100vh;
+    min-height: 100vh;
+    font-family: 'Indie Flower';
+    color: #1f2937;
+    background: #f0f4f8;
 }
 
-/* containers */
-main {
-  display: flex;
+.dashboard-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 1.5rem;
+    margin: 0 auto;
+    position: relative;
 }
 
-/* cptionally changef */
-main section {
-  height: 100px;
-  width: 100px;
+/* Animated Background */
+.animated-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
 }
 
-/* scale SVG to fit container */
-svg {
-  width: 100%; /* or any specific size */
-  height: auto;
-  /* Center and fit */
-  preserveAspectRatio: xMidYMid meet;
+.gradient-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom right,
+        #fce7f3,
+        #ddd6fe,
+        #bfdbfe
+    );
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(16px);
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Bento Items */
+.bento-item {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    text-align: center; 
+}
+
+.glass-effect {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.bento-item:hover .glass-effect {
+    transform: scale(1.02);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+/* Grid Spans */
+.span-2 {
+    grid-column: span 2;
+}
+
+#days-until-trip {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.span-row-2 {
+    grid-row: span 2;
+}
+
+/* Widget Specific Styles */
+.clock-widget .time {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.clock-widget .date {
+    font-size: 1.25rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.events-list {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+}
+
+.events-list li {
+    padding: 0.5rem 0;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.widget-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.picture-widget {
+    grid-column: span 2;
+}
+
+.display-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.system-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 0.5rem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress {
+    height: 100%;
+    background: #1f2937;
+    border-radius: 1rem;
+    transition: width 0.3s ease;
+}
+
+/* Trip Widget Styles */
+.trip-widget .stat {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.trip-widget .icon {
+    font-size: 40px; 
+    margin-bottom: 10px; 
+    text-align: center;
+}
+
+.trip-widget #days-until-trip {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.trip-widget #countdown-days {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+@media (min-width: 1090px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .span-2 {
+        grid-column: span 1;
+    }
+
+    .span-row-2 {
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
 }
