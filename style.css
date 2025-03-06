@@ -1,0 +1,35 @@
+/* Diagnostic Styling */
+* {
+  outline: 2px dotted gray;
+} 
+
+/* temp background color */
+body {
+    background: lightgray;
+}
+  
+/* vertical and horizontal centering */
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+/* containers */
+main {
+  display: flex;
+}
+
+/* cptionally changef */
+main section {
+  height: 100px;
+  width: 100px;
+}
+
+/* scale SVG to fit container */
+svg {
+  width: 100%; /* or any specific size */
+  height: auto;
+  /* Center and fit */
+  preserveAspectRatio: xMidYMid meet;
+}
